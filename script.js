@@ -261,4 +261,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load history when the app starts
     loadHistory();
 });
-Error: Could not translate. Translation API error: 400 
+async function translateText() {
+    const text = inputText.value.trim();
+    const targetLang = targetLangSelect.options[targetLangSelect.selectedIndex].text;
+    
+    if (!text) return;
+    outputText.value = "Translating...";
+
+    try {
+        // This uses an AI model to translate directly in the browser
+        const result = await puter.ai.chat(`Translate the following text to ${targetLang}. Only return the translated text: "${text}"`);
+        outputText.value = result;
+        addTranslationToHistory(text, result, sourceLangSelect.value, targetLangSelect.value);
+    } catch (error) {
+        outputText.value = "Error: " + error.message;
+    }
+}

@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LingoLift - Frontend Translator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>LingoLift</h1>
+        <p class="tagline">Your personal, in-browser interpreter.</p>
+
+        <div class="lang-selector">
+            <label for="sourceLang">Speak/Type In:</label>
+            <select id="sourceLang">
+                <option value="en" selected>English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="zh">Chinese (Simplified)</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                </select>
+        </div>
+
+        <div class="input-area">
+            <textarea id="inputText" placeholder="Type here or click the mic to speak..."></textarea>
+            <button id="micButton" class="icon-button"><i class="fas fa-microphone"></i></button>
+            <div id="micStatus" class="mic-status"></div>
+        </div>
+        
+        <div class="translate-section">
+            <button id="translateButton" class="primary-button">Translate</button>
+        </div>
+
+        <div class="lang-selector">
+            <label for="targetLang">Translate To:</label>
+            <select id="targetLang">
+                <option value="es" selected>Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="pt">Portuguese</option>
+                <option value="en">English</option>
+                <option value="zh">Chinese (Simplified)</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+                </select>
+        </div>
+
+        <div class="output-area">
+            <textarea id="outputText" readonly placeholder="Translation will appear here..."></textarea>
+            <button id="speakButton" class="icon-button"><i class="fas fa-volume-up"></i></button>
+            <button id="copyButton" class="icon-button"><i class="fas fa-copy"></i></button>
+        </div>
+
+        <div class="history-section">
+            <h2>Translation History</h2>
+            <div id="historyList">
+                </div>
+            <button id="clearHistoryButton" class="secondary-button">Clear History</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -261,3 +261,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load history when the app starts
     loadHistory();
 });
+Error: Could not translate. Translation API error: 400 
